@@ -11,7 +11,7 @@ const Search = ()=>{
     return(
         <div className="flex flex-wrap gap-5 justify-center pt-20">
             <div>
-                <span class="material-symbols-outlined text-white pt-2">filter_list</span>
+                <span class="material-symbols-outlined text-white pt-2 cursor-pointer">filter_list</span>
             </div>
             <div>
                 <input

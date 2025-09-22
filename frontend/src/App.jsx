@@ -1,15 +1,12 @@
-import Navbar from "./Components/Navbar"
-import Search from "./Components/Search"
-import OverviewBar from "./Components/OverviewBar"
-import Table from "./Components/Table"
+import { Routes, Route } from "react-router-dom"
+import Dashboard from "./Pages/Dashboard"
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-indigo-600 to-cyan-500">
-      <Navbar />
-      <OverviewBar />
-      <Search />
-      <Table />
+    <div>
+      <Routes>
+        <Route path="/" element={<Dashboard/>} />
+      </Routes>
     </div>
   )
 }
