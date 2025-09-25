@@ -1,6 +1,6 @@
 const LoginForm = () => {
   return (
-    <form className="flex flex-col gap-5 pt-6 bg-white p-6 rounded-xl shadow-lg w-full max-w-md mx-auto">
+    <form className="flex flex-col gap-5 pt-6 bg-white/30 p-6 rounded-xl shadow-lg w-full max-w-md mx-auto">
       <h2 className="text-xl font-semibold text-center text-gray-700">Login</h2>
 
       <div className="flex flex-col">

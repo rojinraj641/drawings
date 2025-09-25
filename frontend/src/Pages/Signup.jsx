@@ -2,11 +2,12 @@ import SignupForm from "../Components/SignupForm";
 import LoginForm from "../Components/LoginForm";
 import { useState } from "react";
 
-const Signup = () => {
+const Signup = ({nameInputRef}) => {
   const [isSigned, setIsSigned] = useState(false);
 
   return (
-    <div className="flex flex-col items-center bg-white rounded-2xl shadow-xl p-6 w-full max-w-lg mx-auto">
+    
+      <div className="flex flex-col bg-white/30 rounded-2xl shadow-xl p-6 w-full max-w-lg mx-auto">
 
       <div className="flex w-full justify-center gap-4 mb-6">
         <button
@@ -32,7 +33,7 @@ const Signup = () => {
       </div>
 
       <div className="w-full">
-        {!isSigned && <SignupForm />}
+        {!isSigned && <SignupForm nameRef={nameInputRef}/>}
         {isSigned && <LoginForm />}
       </div>
     </div>

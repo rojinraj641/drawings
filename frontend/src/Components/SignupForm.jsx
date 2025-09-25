@@ -1,11 +1,12 @@
-const SignupForm = () => {
+const SignupForm = ({nameRef}) => {
   return (
-    <form className="flex flex-col gap-4 pt-6 bg-white p-6 rounded-xl shadow-lg w-full max-w-md mx-auto">
+    <form className="flex flex-col gap-4 pt-6 bg-white/50 p-6 rounded-xl shadow-lg w-full max-w-md mx-auto">
       <h2 className="text-xl font-semibold text-center text-gray-700">Sign Up</h2>
 
       <div className="flex flex-col">
         <p className="text-sm mb-1 text-gray-600">Enter Your Name</p>
         <input
+          ref={nameRef}
           type="text"
           placeholder="Enter your name"
           className="bg-gray-100 rounded-md p-2 text-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500"
