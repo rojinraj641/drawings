@@ -1,33 +1,29 @@
 const OverviewBar = () => {
-    return (
-        <div className="flex flex-wrap justify-center gap-10 pt-30">
-            <div className="p-5 bg-white w-50 h-28 rounded-xl">
-                <p className="text-slate-700 font-md font-semibold">Total Drawing</p>
-                <br />
-                <p className="text-3xl font-bold pb-4">0</p>
-            </div>
-            <div className="p-5 bg-white w-50 h-28 rounded-xl">
-                <p className="text-slate-700 font-md font-semibold">Completed Drawing</p>
-                <br />
-                <p className="text-3xl font-bold pb-4">0</p>
-            </div>
-            <div className=" pl-5 pt-5 bg-white w-50 h-28 rounded-xl">
-                <p className="text-slate-700 font-md font-semibold">Fabrication Completed</p>
-                <br />
-                <p className="text-3xl font-bold pb-4">0</p>
-            </div>
-            <div className="p-5 bg-white w-50 h-28 rounded-xl">
-                <p className="text-slate-700 font-md font-semibold"> Erection Completed</p>
-                <br />
-                <p className="text-3xl font-bold pb-4">0</p>
-            </div>
-            <div className="p-5 bg-white w-50 h-28 rounded-xl">
-                <p className="text-slate-700 font-md font-semibold"> Current Progress</p>
-                <br />
-                <p className="text-3xl font-bold pb-4">0</p>
-            </div>
-        </div>
-    )
-}
+  const stats = [
+    { label: "Total Drawing", value: 0 },
+    { label: "Completed Drawing", value: 0 },
+    { label: "Fabrication Completed", value: 0 },
+    { label: "Erection Completed", value: 0 },
+    { label: "Current Progress", value: 0 },
+    { label: "Total Weight Completed", value: 0}
+  ];
 
-export default OverviewBar
+  return (
+    <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 p-2 pt-20 lg:py-20 lg:px-40 overflow-x-auto">
+      {stats.map((item, index) => (
+        <div
+          key={index}
+          className="min-w-[150px] p-4 bg-white rounded-xl shadow-md flex flex-col justify-center items-center md:w-full"
+        >
+          <p className="text-slate-700 font-semibold text-xs text-center md:text-lg">
+            {item.label}
+          </p>
+          <p className="text-xl font-bold mt-2">{item.value}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default OverviewBar;
+

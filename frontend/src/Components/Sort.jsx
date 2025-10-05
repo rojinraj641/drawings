@@ -1,21 +1,22 @@
-import { useState } from "react"
+import { useState } from "react";
 
-const Sort = ()=>{
-    const [active, setActive] = useState(0);
-    const options = ['All','Fly Ash Silo', 'Cement Silo','Cement Bulk Loading','Packing Plant'];
-    return(
-        <div className="flex flex-wrap gap-4 justify-start pl-15 pt-15 cursor-pointer">
-           {options.map((option, index) => (
-               <div
-                   key={index}
-                   className={`px-4 py-2 rounded-lg ${active === index ? 'bg-pink-500 text-white' : 'bg-gray-200'}`}
-                   onClick={() => setActive(index)}
-               >
-                   {option}
-               </div>
-           ))}
+const Sort = () => {
+  const [active, setActive] = useState(0);
+  const options = ['All','Fly Ash Silo', 'Cement Silo','Packing Plant','Cement Bulk Loading'];
+
+  return (
+    <div className="flex flex-wrap gap-2 justify-start p-2 sm:p-4 cursor-pointer">
+      {options.map((option, index) => (
+        <div
+          key={index}
+          className={`px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-sm sm:text-base ${active === index ? 'bg-pink-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => setActive(index)}
+        >
+          {option}
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};
 
-export default Sort
+export default Sort;

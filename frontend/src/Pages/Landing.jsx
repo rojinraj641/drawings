@@ -35,7 +35,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full pb-20 sm:pb-0">
       {/* Desktop: side by side / Mobile: stacked */}
       <section className="flex flex-col items-center min-h-screen bg-gradient-to-b from-indigo-600 to-cyan-500 px-6 sm:flex-row sm:items-center sm:justify-between sm:px-12">
         
