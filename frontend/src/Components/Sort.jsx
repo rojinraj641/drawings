@@ -5,7 +5,7 @@ const Sort = () => {
   const options = ['All','Fly Ash Silo', 'Cement Silo','Packing Plant','Cement Bulk Loading'];
 
   return (
-    <div className="flex flex-wrap gap-2 justify-start p-2 sm:p-4 cursor-pointer">
+    <div className="flex flex-wrap gap-2 justify-start p-2 sm:pl-39 cursor-pointer">
       {options.map((option, index) => (
         <div
           key={index}

@@ -4,7 +4,7 @@ const OverviewBar = () => {
     { label: "Completed Drawing", value: 0 },
     { label: "Fabrication Completed", value: 0 },
     { label: "Erection Completed", value: 0 },
-    { label: "Current Progress", value: 0 },
+    { label: "Total Weight", value: 0 },
     { label: "Total Weight Completed", value: 0}
   ];
 

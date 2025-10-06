@@ -15,9 +15,6 @@ const Search = () => {
         <div className="flex flex-col gap-4 py-30 lg:py-20 items-center w-full px-4">
             {/* First row: filter + search */}
             <div className="flex items-center gap-2 w-full sm:w-auto justify-center">
-                <span className="material-symbols-outlined text-white cursor-pointer text-lg sm:text-xl">
-                    filter_list
-                </span>
                 <input
                     type="text"
                     placeholder={placeholders[index]}
