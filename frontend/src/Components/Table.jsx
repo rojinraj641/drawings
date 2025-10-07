@@ -30,12 +30,12 @@ const Table = () => {
     <div className="flex justify-center pt-10 lg:pt-20">
       <div className="flex flex-col gap-6 bg-white px-4 sm:px-10 py-5 mx-2 rounded-xl w-full max-w-5xl">
         {/* Header Row (hidden on mobile) */}
-        <div className="hidden sm:flex flex-row text-center gap-4 bg-gray-300 rounded-md p-2 font-semibold">
+        <div className="hidden sm:flex flex-row text-center items-center justify-center gap-4 bg-gray-300 rounded-md p-2 font-semibold">
           <p className="flex-1">S.No.</p>
           <p className="flex-1">Drawing No.</p>
           <p className="flex-2">Description</p>
           <p className="flex-1">Total Weight</p>
-          <p className="flex-1">Progress</p>
+          <p className="flex-1">Completed Weight</p>
           <p className="flex-1">Action</p>
         </div>
 
@@ -64,7 +64,7 @@ const Table = () => {
                 <span>{drawing.totalWeight}</span>
               </div>
               <div className="flex sm:hidden justify-between">
-                <span className="font-semibold">Progress</span>
+                <span className="font-semibold">Completed Weight</span>
                 <span>{drawing.progress}%</span>
               </div>
               <div className="flex sm:hidden justify-between">
