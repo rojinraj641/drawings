@@ -1,6 +1,7 @@
 import SignupForm from "../Components/SignupForm";
 import LoginForm from "../Components/LoginForm";
 import { useState } from "react";
+import { Toaster } from 'react-hot-toast';
 
 const Signup = ({nameInputRef}) => {
   const [isSigned, setIsSigned] = useState(false);
@@ -8,7 +9,7 @@ const Signup = ({nameInputRef}) => {
   return (
     
       <div className="flex flex-col bg-white/30 rounded-2xl shadow-xl p-6 w-full max-w-lg mx-auto">
-
+        <Toaster position="top-right" reverseOrder={false} />
       <div className="flex w-full justify-center gap-4 mb-6">
         <button
           onClick={() => setIsSigned(false)}
