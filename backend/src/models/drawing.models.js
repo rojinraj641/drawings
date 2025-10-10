@@ -14,15 +14,23 @@ const drawingSchema = new mongoose.Schema({
         type:String,
         required: true
     },
+    revision: {
+        type: String,
+        required: true
+    },
     totalWeight: {
         type: Number,
         required: true
     },
-    completedWeight: {
+    fabricationProgress: {
         type: Number,
         default: 0
     },
-    scope: {
+    erectionProgress: {
+        type: Number,
+        default: 0
+    },
+    area: {
         type: String,
         enum: ['Fly Ash Silo','Cement Silo','Packing Plant','Cement Bulk Loading'],
         required: true
@@ -30,6 +38,22 @@ const drawingSchema = new mongoose.Schema({
     isDetailed: {
         type: Boolean,
         default: false
+    },
+    didFabrication: {
+        type: Boolean,
+        default: false
+    },
+    didAssembly: {
+        type: Boolean,
+        default: false
+    },
+    didErection: {
+        type: Boolean,
+        default: false
+    },
+    dateOfIssue: {
+        type: Date,
+        default: Date.now()
     }
 },{timestamps: true})
 
