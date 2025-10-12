@@ -11,227 +11,204 @@ const NewDrawing = () => {
   ];
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex justify-center items-center bg-gradient-to-br from-gray-50 via-pink-50 to-gray-100 px-4 sm:px-6 lg:px-8">
       <form
         action="submit"
-        className="bg-white shadow-lg rounded-2xl p-6 sm:p-8 w-full max-w-md sm:max-w-lg lg:max-w-2xl space-y-6"
+        className="bg-white shadow-xl rounded-2xl p-8 sm:p-10 w-full max-w-3xl space-y-8 border border-gray-100"
       >
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-4">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 text-center mb-2">
           Add New Drawing
         </h2>
+        <p className="text-center text-gray-500 mb-6">
+          Fill in the details below to register a new structural drawing.
+        </p>
 
-        {/* Drawing Number */}
-        <div className="flex flex-col">
-          <label className="font-semibold text-gray-700 mb-1">Drawing No.</label>
-          <input
-            type="text"
-            placeholder="Enter drawing number"
-            className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
-          />
-        </div>
+        {/* Section: Drawing Info */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-gray-700 border-b pb-1">
+            Drawing Information
+          </h3>
 
-        {/* Description */}
-        <div className="flex flex-col">
-          <label className="font-semibold text-gray-700 mb-1">Description</label>
-          <input
-            type="text"
-            placeholder="Enter description"
-            className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
-          />
-        </div>
-
-        {/* Scope */}
-        <div>
-          <p className="font-semibold text-gray-700 mb-2">Area</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {scopes.map((scope, index) => (
-              <label
-                key={index}
-                className={`flex items-center gap-2 border rounded-lg px-3 py-2 cursor-pointer transition-all duration-200 ${selectedScope === scope
-                    ? "bg-pink-50 border-pink-500 text-pink-700"
-                    : "border-gray-300 hover:bg-gray-100"
-                  }`}
-              >
-                <input
-                  type="radio"
-                  name="scope"
-                  value={scope}
-                  checked={selectedScope === scope}
-                  onChange={() => setSelectedScope(scope)}
-                  className="accent-pink-500"
-                />
-                {scope}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label className="font-medium text-gray-700 mb-1 block">
+                Drawing No.
               </label>
+              <input
+                type="text"
+                placeholder="Enter drawing number"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              />
+            </div>
+
+            <div>
+              <label className="font-medium text-gray-700 mb-1 block">
+                Revision
+              </label>
+              <input
+                type="text"
+                placeholder="Enter current revision"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="font-medium text-gray-700 mb-1 block">
+              Description
+            </label>
+            <input
+              type="text"
+              placeholder="Enter description"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
+            />
+          </div>
+
+          {/* Area */}
+          <div>
+            <label className="font-medium text-gray-700 mb-2 block">Area</label>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {scopes.map((scope, index) => (
+                <label
+                  key={index}
+                  className={`flex items-center gap-2 border rounded-lg px-3 py-2 cursor-pointer transition-all duration-200 ${
+                    selectedScope === scope
+                      ? "bg-pink-100 border-pink-500 text-pink-700"
+                      : "border-gray-300 hover:bg-gray-50"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="scope"
+                    value={scope}
+                    checked={selectedScope === scope}
+                    onChange={() => setSelectedScope(scope)}
+                    className="accent-pink-500"
+                  />
+                  {scope}
+                </label>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Section: Weight Info */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-gray-700 border-b pb-1">
+            Weight Details
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label className="font-medium text-gray-700 mb-1 block">
+                Total Weight (MT)
+              </label>
+              <input
+                type="number"
+                placeholder="Enter total weight"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              />
+            </div>
+            <div>
+              <label className="font-medium text-gray-700 mb-1 block">
+                Fabrication Completed (MT)
+              </label>
+              <input
+                type="number"
+                placeholder="Enter fabricated weight"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              />
+            </div>
+            <div>
+              <label className="font-medium text-gray-700 mb-1 block">
+                Erection Completed (MT)
+              </label>
+              <input
+                type="number"
+                placeholder="Enter erected weight"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Section: Drawing Stages */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-gray-700 border-b pb-1">
+            Drawing Stages
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { label: "Detailed", name: "detailed" },
+              { label: "Assembly", name: "assembly" },
+              { label: "Erection", name: "erection" },
+            ].map(({ label, name }) => (
+              <div key={name}>
+                <p className="font-medium text-gray-700 mb-1">{label}</p>
+                <div className="flex gap-5">
+                  {["Yes", "No"].map((option) => (
+                    <label key={option} className="flex items-center gap-2">
+                      <input
+                        type="radio"
+                        name={name}
+                        value={option}
+                        className="accent-pink-500"
+                      />
+                      {option}
+                    </label>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Total Weight */}
-        <div className="flex flex-col sm:flex-row sm:gap-4">
-          <div className="flex flex-col w-full sm:w-1/2">
-            <label className="font-semibold text-gray-700 mb-1">
-              Total Weight (MT)
-            </label>
-            <input
-              type="number"
-              placeholder="Enter total weight"
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
-            />
-          </div>
-
-          <div className="flex flex-col w-full sm:w-1/2">
-            <label className="font-semibold text-gray-700 mb-1">
-              Revision
-            </label>
-            <input
-              type="text"
-              placeholder="Enter current revision"
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row sm:gap-4">
-          <div className="flex flex-col w-full sm:w-1/2">
-            <label className="font-semibold text-gray-700 mb-1">
-              Fabrication Completed (MT)
-            </label>
-            <input
-              type="number"
-              placeholder="Enter total weight"
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
-            />
-          </div>
-
-          <div className="flex flex-col w-full sm:w-1/2">
-            <label className="font-semibold text-gray-700 mb-1">
-              Erection Completed (MT)
-            </label>
-            <input
-              type="number"
-              placeholder="Enter completed weight"
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row sm:gap-4">
-          <div className="flex flex-col w-full sm:w-1/2">
-            <label className="font-semibold text-gray-700 mb-1">
-              Detailed
-            </label>
-            <div className="flex gap-5">
-              <div className="flex gap-2">
-                <input
-                type="radio"
-                name="erection"
-                className="accent-pink-500"
-              />
-              <label>Yes</label>
-              </div>
-              <div className="flex gap-2">
+        {/* Section: Detailer Info */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-gray-700 border-b pb-1">
+            Detailer Information
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div>
+              <label className="font-medium text-gray-700 mb-1 block">
+                Name
+              </label>
               <input
-                type="radio"
-                name="erection"
-                className="accent-pink-500"
+                type="text"
+                placeholder="Enter detailer name"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
               />
-              <label>No</label>
-              </div>
             </div>
-          </div>
-
-          <div className="flex flex-col w-full sm:w-1/2">
-            <label className="font-semibold text-gray-700 mb-1">
-              Assembly
-            </label>
-            <div className="flex gap-5">
-              <div className="flex gap-2">
-                <input
-                type="radio"
-                name="erection"
-                className="accent-pink-500"
-              />
-              <label>Yes</label>
-              </div>
-              <div className="flex gap-2">
+            <div>
+              <label className="font-medium text-gray-700 mb-1 block">
+                Email
+              </label>
               <input
-                type="radio"
-                name="erection"
-                className="accent-pink-500"
+                type="email"
+                placeholder="Enter email"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
               />
-              <label>No</label>
-              </div>
+            </div>
+            <div>
+              <label className="font-medium text-gray-700 mb-1 block">
+                Phone
+              </label>
+              <input
+                type="tel"
+                placeholder="Enter phone number"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              />
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:gap-4">
-          <div className="flex flex-col w-full sm:w-1/2">
-            <label className="font-semibold text-gray-700 mb-1">
-              Erection
-            </label>
-            <div className="flex gap-5">
-              <div className="flex gap-2">
-                <input
-                type="radio"
-                name="erection"
-                className="accent-pink-500"
-              />
-              <label>Yes</label>
-              </div>
-              <div className="flex gap-2">
-              <input
-                type="radio"
-                name="erection"
-                className="accent-pink-500"
-              />
-              <label>No</label>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col w-full sm:w-1/2">
-            <label className="font-semibold text-gray-700 mb-1">
-              Detailer
-            </label>
-            <input
-              type="text"
-              placeholder="Enter detailer name"
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
-            />
-          </div>     
-        </div>
-
-        <div className="flex flex-col sm:flex-row sm:gap-4">
-          <div className="flex flex-col w-full sm:w-1/2">
-            <label className="font-semibold text-gray-700 mb-1">
-              Detailer - email
-            </label>
-            <input
-              type="email"
-              placeholder="Enter detailer's email"
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
-            />
-          </div>
-
-          <div className="flex flex-col w-full sm:w-1/2">
-            <label className="font-semibold text-gray-700 mb-1">
-              Detailer - phone 
-            </label>
-            <input
-              type="phone"
-              placeholder="Enter detailer's phone number"
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
-            />
-          </div>
-        </div>
-
-        {/* Submit Button */}
-        <div className="flex justify-center">
+        {/* Submit */}
+        <div className="flex justify-center pt-4">
           <button
             type="submit"
-            className="bg-pink-500 text-white font-semibold px-8 py-2 rounded-lg shadow-md hover:bg-pink-600 transition-all w-full sm:w-auto"
+            className="bg-gradient-to-r from-pink-500 to-pink-600 text-white font-semibold px-10 py-3 rounded-lg shadow-lg hover:from-pink-600 hover:to-pink-700 transition-all"
           >
-            Submit
+            Submit Drawing
           </button>
         </div>
       </form>
