@@ -1,4 +1,4 @@
-const Details = ({ data }) => {
+const Details = () => {
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-50 px-4 sm:px-6 lg:px-8">
       <div className="bg-white w-full max-w-3xl rounded-2xl shadow-lg p-6 sm:p-8 space-y-4 sm:space-y-5">
@@ -12,7 +12,7 @@ const Details = ({ data }) => {
               Drawing No.
             </span>
             <span className="text-gray-800 text-lg font-medium break-words">
-              {data.drawingNo || "—"}
+              
             </span>
           </div>
 
@@ -21,16 +21,16 @@ const Details = ({ data }) => {
               Description
             </span>
             <span className="text-gray-800 text-lg font-medium break-words">
-              {data.description || "—"}
+              
             </span>
           </div>
 
           <div className="flex flex-col">
             <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
-              Scope
+              Revision
             </span>
             <span className="text-gray-800 text-lg font-medium">
-              {data.scope || "—"}
+              
             </span>
           </div>
 
@@ -39,26 +39,129 @@ const Details = ({ data }) => {
               Total Weight
             </span>
             <span className="text-gray-800 text-lg font-medium">
-              {data.totalWeight ? `${data.totalWeight} kg` : "—"}
+               "—"
             </span>
           </div>
 
-          <div className="flex flex-col sm:col-span-2">
+          <div className="flex flex-col">
             <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
-              Completed Weight
+              Fabrication Completed
             </span>
             <span className="text-gray-800 text-lg font-medium">
-              {data.completedWeight ? `${data.completedWeight} kg` : "—"}
+              "—"
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
+              Erection Completed
+            </span>
+            <span className="text-gray-800 text-lg font-medium">
+              "—"
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
+              Area
+            </span>
+            <span className="text-gray-800 text-lg font-medium">
+              "—"
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
+              Detailed
+            </span>
+            <span className="text-gray-800 text-lg font-medium">
+              "—"
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
+              Fabrication
+            </span>
+            <span className="text-gray-800 text-lg font-medium">
+              "—"
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
+              Assembly
+            </span>
+            <span className="text-gray-800 text-lg font-medium">
+              "—"
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
+              Erection
+            </span>
+            <span className="text-gray-800 text-lg font-medium">
+              "—"
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
+              Detailer
+            </span>
+            <span className="text-gray-800 text-lg font-medium">
+              "—"
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
+              Detailer Phone Number
+            </span>
+            <span className="text-gray-800 text-lg font-medium">
+              "—"
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
+              Detailer Email
+            </span>
+            <span className="text-gray-800 text-lg font-medium">
+              "—"
+            </span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-gray-500 font-semibold text-sm uppercase tracking-wide">
+              Date of issue
+            </span>
+            <span className="text-gray-800 text-lg font-medium">
+              "—"
             </span>
           </div>
         </div>
 
-        <div className="flex justify-center pt-6">
+        {/* Button section */}
+        <div className="flex flex-wrap justify-center gap-4 pt-6">
           <button
             onClick={() => window.history.back()}
-            className="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-2 rounded-lg shadow transition-all"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold px-6 py-2 rounded-lg shadow transition-all"
           >
             Back
+          </button>
+
+          <button
+            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg shadow transition-all"
+          >
+            Edit
+          </button>
+
+          <button
+            className="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-2 rounded-lg shadow transition-all"
+          >
+            Delete
           </button>
         </div>
       </div>
@@ -67,3 +170,4 @@ const Details = ({ data }) => {
 };
 
 export default Details;
+

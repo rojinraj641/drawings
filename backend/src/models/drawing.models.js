@@ -54,6 +54,15 @@ const drawingSchema = new mongoose.Schema({
     dateOfIssue: {
         type: Date,
         default: Date.now()
+    },
+    detailer:{
+        type: String,
+    },
+    detailerPhone: {
+        type: String
+    },
+    detailerEmail: {
+        type: String
     }
 },{timestamps: true})
 

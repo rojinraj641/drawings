@@ -42,16 +42,15 @@ const NewDrawing = () => {
 
         {/* Scope */}
         <div>
-          <p className="font-semibold text-gray-700 mb-2">Scope</p>
+          <p className="font-semibold text-gray-700 mb-2">Area</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {scopes.map((scope, index) => (
               <label
                 key={index}
-                className={`flex items-center gap-2 border rounded-lg px-3 py-2 cursor-pointer transition-all duration-200 ${
-                  selectedScope === scope
+                className={`flex items-center gap-2 border rounded-lg px-3 py-2 cursor-pointer transition-all duration-200 ${selectedScope === scope
                     ? "bg-pink-50 border-pink-500 text-pink-700"
                     : "border-gray-300 hover:bg-gray-100"
-                }`}
+                  }`}
               >
                 <input
                   type="radio"
@@ -82,11 +81,145 @@ const NewDrawing = () => {
 
           <div className="flex flex-col w-full sm:w-1/2">
             <label className="font-semibold text-gray-700 mb-1">
-              Completed Weight (MT)
+              Revision
+            </label>
+            <input
+              type="text"
+              placeholder="Enter current revision"
+              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row sm:gap-4">
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label className="font-semibold text-gray-700 mb-1">
+              Fabrication Completed (MT)
+            </label>
+            <input
+              type="number"
+              placeholder="Enter total weight"
+              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
+            />
+          </div>
+
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label className="font-semibold text-gray-700 mb-1">
+              Erection Completed (MT)
             </label>
             <input
               type="number"
               placeholder="Enter completed weight"
+              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row sm:gap-4">
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label className="font-semibold text-gray-700 mb-1">
+              Detailed
+            </label>
+            <div className="flex gap-5">
+              <div className="flex gap-2">
+                <input
+                type="radio"
+                name="erection"
+                className="accent-pink-500"
+              />
+              <label>Yes</label>
+              </div>
+              <div className="flex gap-2">
+              <input
+                type="radio"
+                name="erection"
+                className="accent-pink-500"
+              />
+              <label>No</label>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label className="font-semibold text-gray-700 mb-1">
+              Assembly
+            </label>
+            <div className="flex gap-5">
+              <div className="flex gap-2">
+                <input
+                type="radio"
+                name="erection"
+                className="accent-pink-500"
+              />
+              <label>Yes</label>
+              </div>
+              <div className="flex gap-2">
+              <input
+                type="radio"
+                name="erection"
+                className="accent-pink-500"
+              />
+              <label>No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row sm:gap-4">
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label className="font-semibold text-gray-700 mb-1">
+              Erection
+            </label>
+            <div className="flex gap-5">
+              <div className="flex gap-2">
+                <input
+                type="radio"
+                name="erection"
+                className="accent-pink-500"
+              />
+              <label>Yes</label>
+              </div>
+              <div className="flex gap-2">
+              <input
+                type="radio"
+                name="erection"
+                className="accent-pink-500"
+              />
+              <label>No</label>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label className="font-semibold text-gray-700 mb-1">
+              Detailer
+            </label>
+            <input
+              type="text"
+              placeholder="Enter detailer name"
+              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
+            />
+          </div>     
+        </div>
+
+        <div className="flex flex-col sm:flex-row sm:gap-4">
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label className="font-semibold text-gray-700 mb-1">
+              Detailer - email
+            </label>
+            <input
+              type="email"
+              placeholder="Enter detailer's email"
+              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
+            />
+          </div>
+
+          <div className="flex flex-col w-full sm:w-1/2">
+            <label className="font-semibold text-gray-700 mb-1">
+              Detailer - phone 
+            </label>
+            <input
+              type="phone"
+              placeholder="Enter detailer's phone number"
               className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400 w-full"
             />
           </div>
