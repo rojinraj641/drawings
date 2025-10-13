@@ -34,8 +34,8 @@ const Table = () => {
           <p className="flex-1">S.No.</p>
           <p className="flex-1">Drawing No.</p>
           <p className="flex-2">Description</p>
-          <p className="flex-1">Total Weight</p>
-          <p className="flex-1">Completed Weight</p>
+          <p className="flex-1">Revision</p>
+          <p className="flex-1">Total weight</p>
           <p className="flex-1">Action</p>
         </div>
 
