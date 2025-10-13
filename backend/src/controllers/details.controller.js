@@ -6,12 +6,17 @@ const details = async(req,res)=>{
         const drawing = await Drawing.findOne({
             drawingId: drawingId
         })
-        return res.status(200).json({data: drawing, message: 'Drawings found'});
+        if(drawing){
+            return res.status(200).json({data: drawing, message: 'Drawings found'});
+        }
+        else{
+            return res.status(404).json({message: 'Drawing not found'})
+        }
     }
     catch(error){
         console.log('Error occured');
-        return res.status(404).json({
-            message: 'Drawing not found'
+        return res.status(500).json({
+            message: 'Something went wrong'
         })
     }
 }
