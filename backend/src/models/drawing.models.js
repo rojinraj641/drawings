@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 const drawingSchema = new mongoose.Schema({
     drawingId: {
         type: String,
-        required: true,
     },
     drawingNo:{
         type: String, 
@@ -50,10 +49,6 @@ const drawingSchema = new mongoose.Schema({
     didErection: {
         type: Boolean,
         default: false
-    },
-    dateOfIssue: {
-        type: Date,
-        default: Date.now()
     },
     detailer:{
         type: String,
