@@ -1,16 +1,9 @@
-import axios from "axios";
+import {useNavigate} from 'react-router-dom';
 
 const AddDrawing = () => {
-  const handleClick = async()=>{
-    try{
-      const res = await axios.get('/api/v1/newDrawing');
-      console.log(`Response data: ${res.data}`)
-      alert(res.data.message || "Page loaded");
-    }
-    catch(error){
-      console.log(`Error message: ${res.data.message}`)
-      alert(res.data.message || "Page not found");
-    }
+  const navigate = useNavigate();
+  const handleClick = ()=>{
+    navigate('/newDrawing')
   }
   return (
     <div className="flex justify-end sm:justify-end px-4 sm:px-10 pt-6 sm:pt-10">

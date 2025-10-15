@@ -3,13 +3,13 @@ import bcrypt from 'bcryptjs';
 
 const signup = async (req, res) => {
     try{
-        const {username, email, password, keepSignedIn} = req.query;
+        const {username, email, password, keepSignedIn} = req.body;
         const existingUser = await User.findOne({
             $or: [{username},{email}]
         });
 
         if(existingUser){
-            return res.status(409).json('User already exists');
+            return res.status(409).json('User already exists, Please Login');
         }
         const hashedPassword = await bcrypt.hash(password,10);
 
@@ -25,6 +25,7 @@ const signup = async (req, res) => {
         })
     }
     catch(error){
+        console.log('Invalid User')
         return res.status(404).json('Invalid user');
     }
 }

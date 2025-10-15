@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from 'axios'
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm = ({ nameRef }) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -30,17 +32,18 @@ const SignupForm = ({ nameRef }) => {
       toast.error(`Confirm password doesn't match. Please check`)
     }
     else {
-      try{
-        const res = await axios.post('/api/v1/signup',{
+      try {
+        const response = await axios.post("http://localhost:3000/api/v1/signup", {
           username,
           email,
           password,
           keepSignedIn
         })
-        toast.success(res.data.message);
+        navigate('/dashboard');
+        console.log(response.data.message);
       }
-      catch(error){
-        toast.error(res.data.message);
+      catch (error) {
+        console.log(`Error message:${error.message}`);
       }
     }
   }
@@ -97,7 +100,7 @@ const SignupForm = ({ nameRef }) => {
         <input
           type="checkbox"
           checked={keepSignedIn}
-          onClick={() => setKeepSignedIn(prev => !prev)}
+          onChange={() => setKeepSignedIn(prev => !prev)}
           className="accent-pink-500" />
         <label className="text-sm text-gray-600">Keep me signed in</label>
       </div>
