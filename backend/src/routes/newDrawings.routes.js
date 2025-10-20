@@ -1,5 +1,5 @@
 import express from 'express';
-import newDrawings from '../controllers/newDrawings.js';
+import newDrawings from '../controllers/newDrawings.controllers.js';
 
 const router = express.Router();
 router.route('/newDrawings').post(newDrawings);

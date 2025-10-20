@@ -1,8 +1,10 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [keepSignedIn, setKeepSignedIn] = useState(false);
@@ -23,12 +25,13 @@ const LoginForm = () => {
     }
     else{
       try{
-        const res = await axios.post('/api/v1/login',{
+        const res = await axios.post("http://localhost:3000/api/v1/login",{
           email,
           password,
           keepSignedIn
         })
-        toast.success(res.data.message);
+        navigate('/dashboard');
+        toast.success(res.data.message)
       }
       catch(error){
         toast.error(res.data.message);
